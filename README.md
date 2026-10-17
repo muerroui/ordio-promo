@@ -1,54 +1,39 @@
-# Remotion video
+# Ordio — 60-second vertical promo
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+A production-ready Remotion composition for Ordio, a POS and inventory
+management platform for Moroccan auto-parts stores.
 
-Welcome to your Remotion project!
+- Composition ID: `OrdioPromo`
+- Format: 1080 × 1920 (9:16)
+- Frame rate: 30 FPS
+- Duration: 1800 frames / 60 seconds
+- UI artwork: React and CSS only
+- Narration: `public/voiceover.mp3`
 
 ## Commands
 
-**Install Dependencies**
+## Setup
 
-```console
-npm i --loglevel=error
+```bash
+npm install
 ```
 
-**Start Preview**
+Place the final 60-second narration at `public/voiceover.mp3`, then open the
+Remotion Studio:
 
-```console
+```bash
 npm run dev
 ```
 
-**Render video**
+## Validate and render
 
-```console
-npx remotion render
+```bash
+npm run lint
+npx remotion render OrdioPromo out/ordio-promo.mp4
 ```
 
-**Upgrade Remotion**
+The animation timeline is split into five scene components in `src/scenes.tsx`.
+Brand colors and Arabic font fallbacks are centralized in `src/theme.ts`.
 
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+For best Arabic rendering, install **Noto Sans Arabic** or **Noto Kufi Arabic**
+on the render machine. Tahoma and Arial are included as system fallbacks.
